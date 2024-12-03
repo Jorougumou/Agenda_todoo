@@ -2,7 +2,7 @@ import Image from "next/image";
 import Agenda from '../components/Agenda'
 import Listatodo from '../components/Listatodo'
 import localFont from "next/font/local";
-import Link from './'
+import Link from 'next/link'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +27,7 @@ export default function Home() {
             <label htmlFor="">Senha</label>
             <input className="border h-8" type="password" name="" id="" />
           </div>
-          <Link href="/Afazeres" className="mt-20 bg-purple-300 w-40 flex justify-center items-center h-10 rounded-full hover:bg-purple-400"><a href=""></a></Link>
+          <Link href='/Afazeres' className="mt-20 bg-purple-300 w-40 flex justify-center items-center h-10 rounded-full hover:bg-purple-400">entrar</Link>
       </div>
   </div>
   );

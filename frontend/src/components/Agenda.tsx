@@ -1,19 +1,11 @@
 import { add, format,getDaysInMonth, sub } from "date-fns";
 import Dia from './Dia'
+import daylist from '../functions/daylist'
 import { useEffect, useState } from "react";
 export default function Agenda() {
    const [datab = new Date,setDatab] = useState<Date | undefined>()
 
-    function numberlist(limite:number){
-        let list = []
-        let inicio=1
-        while (inicio != limite+1) {
-            list.push(inicio)
-            inicio++
-        }
-
-        return(list)
-    }
+    
 
     function voltarmes(){
         setDatab(sub(datab,{ years: 0,
@@ -53,9 +45,9 @@ export default function Agenda() {
         
             <div className="bg-slate-100 grid grid-cols-7 grid-rows-5  h-full ">
                 
-                {numberlist(getDaysInMonth(datab)).map( (index) => 
-                
-                    <Dia key={index} dia={index.toString()}/>
+                {daylist(datab).map( (index) => 
+                    
+                    <Dia id={format(index,'d')}  key={format(index,'d')} dia={format(index,'d')}/>
                 )}
             </div>
         </div>
